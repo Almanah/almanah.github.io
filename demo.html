@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<head>
+    <title>VIA.Components Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta property="og:title" content="Meta title"/>
+    <meta property="og:url" content="http://www.mtv.com/videos/movie-trailers/746004/thats-my-boy.jhtml"/>
+    <meta property="og:embed" content="Embed code from meta tag"/>
+    <!-- <script src="http://code.jquery.com/jquery-1.8.2.js" type="text/javascript"></script> -->
+    <script src="//code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js" type="text/javascript"></script>
+    <script src="//cdn.rawgit.com/systemjs/systemjs/master/dist/system.js"></script>
+    <script src="//widgets4.flux-dev.com/Core" id="90AFFEFF00F8FC630002FFFEAF90" type="text/javascript"></script>
+    <script src="via.components.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="via.components.css"/>
+    <style>
+        body {
+            padding: 20px 20px 30px 120px;
+        }
+        @media (max-width: 480px) {
+            body {
+                padding:0;
+            }
+        }
+
+        @font-face {
+            font-family: 'Custom';
+            src:url(data:application/font-woff;charset=utf-8;base64,d09GRgABAAAAAASwAAsAAAAABGQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAABCAAAAGAAAABgDxICKmNtYXAAAAFoAAAAVAAAAFQaVsyHZ2FzcAAAAbwAAAAIAAAACAAAABBnbHlmAAABxAAAAKgAAACo3bO1DmhlYWQAAAJsAAAANgAAADYHFpRxaGhlYQAAAqQAAAAkAAAAJAfCA8ZobXR4AAACyAAAABQAAAAUCgAAAGxvY2EAAALcAAAADAAAAAwAKABobWF4cAAAAugAAAAgAAAAIAAHACZuYW1lAAADCAAAAYYAAAGGmUoJ+3Bvc3QAAASQAAAAIAAAACAAAwAAAAMDAAGQAAUAAAKZAswAAACPApkCzAAAAesAMwEJAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAA5gADwP/AAEADwABAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAwAAAAMAAAAcAAEAAwAAABwAAwABAAAAHAAEADgAAAAKAAgAAgACAAEAIOYA//3//wAAAAAAIOYA//3//wAB/+MaBAADAAEAAAAAAAAAAAAAAAEAAf//AA8AAQAAAAAAAAAAAAIAADc5AQAAAAABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAA/8AEAAOAACMAAAEyHgIVFA4CIyImJw4DBzU+ATU0JicuAzU0PgIzAgBqu4tQUIu7ahQoFClaXWAwM00BASxGMRtQi7tqA4BBcZhWVphxQQMCKTMdCgIbGlc0Bw8HHEhSXDFWmHFBAAAAAQAAAAEAAMtT0QlfDzz1AAsEAAAAAADR+6gaAAAAANH7qBoAAP/ABAADgAAAAAgAAgAAAAAAAAABAAADwP/AAAAEAAAAAAAEAAABAAAAAAAAAAAAAAAAAAAABQQAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAAAKABQAHgBUAAEAAAAFACQAAQAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAOAK4AAQAAAAAAAQAHAAAAAQAAAAAAAgAHAGAAAQAAAAAAAwAHADYAAQAAAAAABAAHAHUAAQAAAAAABQALABUAAQAAAAAABgAHAEsAAQAAAAAACgAaAIoAAwABBAkAAQAOAAcAAwABBAkAAgAOAGcAAwABBAkAAwAOAD0AAwABBAkABAAOAHwAAwABBAkABQAWACAAAwABBAkABgAOAFIAAwABBAkACgA0AKRpY29tb29uAGkAYwBvAG0AbwBvAG5WZXJzaW9uIDEuMABWAGUAcgBzAGkAbwBuACAAMQAuADBpY29tb29uAGkAYwBvAG0AbwBvAG5pY29tb29uAGkAYwBvAG0AbwBvAG5SZWd1bGFyAFIAZQBnAHUAbABhAHJpY29tb29uAGkAYwBvAG0AbwBvAG5Gb250IGdlbmVyYXRlZCBieSBJY29Nb29uLgBGAG8AbgB0ACAAZwBlAG4AZQByAGEAdABlAGQAIABiAHkAIABJAGMAbwBNAG8AbwBuAC4AAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA) format('woff')
+        }
+
+        .viaIconComments:before {
+            font-family: 'Custom';
+            content: "\e600";
+            color: #0088dc;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<div id="container2"></div>
+<div class="text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce interdum finibus lectus eget semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus condimentum malesuada malesuada. Praesent tempus, dolor at ornare convallis, nisi tortor consectetur ante, ut ullamcorper dolor massa et dui. Donec vel volutpat sem. Aliquam vel nisl ultricies, tincidunt purus at, commodo sem. Aliquam mollis sit amet odio nec tempor. Phasellus faucibus odio velit, sed interdum nisi pharetra in. Nunc dapibus nisi non tellus pellentesque, ac sodales magna finibus. Aenean ultrices justo ipsum. Maecenas vel hendrerit arcu, at pharetra nulla. Vivamus dictum, odio nec molestie eleifend, nunc libero accumsan metus, et luctus velit sem a magna. Curabitur gravida pretium tellus vitae facilisis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras a nulla massa. Maecenas vel arcu lacus. Donec interdum lorem neque, quis rhoncus ligula iaculis at. Sed ac metus ac mauris dictum lacinia. Mauris rhoncus, sem et consectetur aliquam, mauris orci fringilla ipsum, ut tempor augue ligula non elit. Praesent efficitur sem facilisis, tempus odio eu, scelerisque odio. Praesent in augue nibh. Cras at arcu eget tellus sodales luctus vel a magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent et erat vel ipsum commodo porttitor. Donec vehicula volutpat fermentum. Integer non cursus libero. Aliquam erat volutpat. Donec ullamcorper rutrum neque vel venenatis. Fusce at congue felis. Nullam auctor odio ut diam iaculis, ac maximus nisl mattis. Praesent convallis eu justo vitae porttitor. Aenean vel sapien ut nisl feugiat malesuada sed ut neque. Maecenas mi justo, gravida eu consequat ac, maximus vitae nisi. Cras semper laoreet vehicula. Integer sollicitudin mattis dui blandit iaculis. Sed a tempor tellus, at laoreet neque. Etiam viverra sem non lectus imperdiet, vel sagittis leo efficitur. Duis volutpat pretium cursus. Nullam accumsan viverra ligula, ac finibus mauris ultrices consectetur. Mauris varius dui at metus interdum, id fringilla mauris commodo. Nulla eu vestibulum urna. In vehicula augue in dapibus vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean dapibus sodales mi sit amet ornare. Fusce lobortis nunc viverra, sagittis velit sit amet, vehicula nunc. Sed pellentesque nisi ac erat fringilla, id vehicula elit sagittis. Integer malesuada ullamcorper velit, vel egestas arcu scelerisque sed. Mauris finibus ullamcorper metus vel congue. Aliquam rhoncus egestas massa, et placerat odio tempor in. Nullam consequat massa nec diam laoreet, vitae tincidunt turpis aliquam. Nullam ligula neque, accumsan non ante non, suscipit scelerisque felis. Vestibulum quis fermentum magna. Sed nisl nulla, dignissim sit amet finibus et, porttitor a mi. Cras id nulla scelerisque, aliquet lectus nec, ultricies nunc. Nulla posuere eget erat nec facilisis. Proin erat diam, convallis rutrum sollicitudin quis, porttitor ac nulla. Nulla placerat ante ut nisl egestas, sit amet sodales mauris iaculis. Nam id luctus nisl, id sagittis magna. Maecenas quis nunc vitae nibh luctus fermentum. Nulla non ornare dui. Integer pellentesque sem sem, eu blandit arcu sagittis at. Proin id quam consequat, ultrices augue et, rhoncus purus. Morbi rhoncus libero at mi auctor convallis. Pellentesque et quam orci. Mauris a dui metus. Morbi tellus ipsum, vehicula vitae lectus eu, sagittis egestas quam. Nunc rutrum at mauris vel lobortis. Pellentesque ac sem sit amet ligula porta luctus. Phasellus eu nibh in dolor accumsan vehicula at eu dui. Vestibulum in mauris tortor.
+</div>
+<script>
+    var $container = $('#container');
+
+    VIA.Share.create({
+        container: $container,
+        content: {
+            title : 'content title',
+            url : 'http://www.mtv.com/videos/movie-trailers/746004/thats-my-boy.jhtml',
+            embed: 'embed code'
+        },
+        debug: true,
+        elements: [
+            { id: 'Toggle', title: 'Share this!', close: 'Close'  },
+            { id: 'Facebook', count: true },
+            { id: 'Twitter', title: 'Twitter2' },
+            { id: 'Tumblr', title: 'Tumblr' },
+            { id: 'Embed', title: 'Embed' },
+            { id: 'Google', pin: true, title: 'Email12' },
+            { id: 'MailTo', title: 'Test', subject: 'Hello', body: 'Glad to see you' },
+            { id: 'WhatsApp', title: 'Email12' },
+            {
+                id: 'Custom',
+                elementId: 'Comments',
+                count: true,
+                onClick: function() {
+                    $('html, body').animate({
+                        scrollTop: $('.sm4_comments').offset().top - 30
+                    }, 1000);
+                },
+                afterRender: function() {
+                    Flux4.addEventListener('onCommentsCountChanged', function (commentsCount) {
+                        $('.actionItem.comments .actionCount').html(commentsCount).addClass('loaded');
+                    });
+                }
+            }
+        ],
+        views: {
+            '0-450': {
+                behaviour: 'fixed-or-pinned',
+                pinTo: 'left',
+                maxNumberOfPinnedElements: '4',
+                offsetTop: 100
+            },
+            '451-600': {
+                behaviour: 'fixed'
+            },
+            '601-*': {
+                behaviour: 'floating',
+                offsetTop: 100
+            }
+        }
+    });
+
+    // Flux4.createWidget('Comments#4310', {
+    //     contentId: 'id::mgid:uma:video:stg:mtv.com:257372809112::og::http://sm4qa.mtvi.com/stg/yulya/og_discovering.html',
+    //     sentimentTags: {
+    //         showCountersByDefault: true,
+    //         items: [
+    //             { tagId: 17 },
+    //             { tagId: 29 },
+    //             { tagId: 18 },
+    //             { tagId: 26 },
+    //             { tagId: 27 }
+    //         ]
+    //     },
+    //     maxResults: 5,
+    //     includeChildren: true,
+    //     showPostToFacebook: true,
+    //     showPostToTwitter: true,
+    //     includeGuestActivities: false,
+    //     showPopularActivities: true,
+    //     popularActivitiesCount: 5,
+    //     popularActivitiesTitle: 'Top comment',
+    //     includeSentimentTags: true
+    // });
+
+
+    // var $container2 = $('#container2');
+
+    // VIA.Follow.create({
+    //     container: $container2,
+    //     mode: 'horizontal',
+    //     title: 'moreme',
+    //     debug: true,
+    //     elements: [
+    //         { id: 'Facebook', locale: 'fr_FR', profile: 'MTV' },
+    //         { id: 'Twitter', lang: 'ko', profile: 'thehills'  },
+    //         { id: 'youtube', profile: 'GoogleDevelopers' },
+    //         { id: 'tumblr', color: 'black', useBlogTitle: false, profile: 'vh1' },
+    //         { id: 'instagram', buttonTitle: 'Follow @football', profile: 'football' },
+    //         { id: 'menu',
+    //             elements: [
+    //                 { id: 'pinterest', title: "GGGGG", profile: 'skinnyvinny' },
+    //                 { id:'foursquare', title: "GGGGG", profile: '660771' }
+    //             ]
+    //         }
+    //     ],
+    //     callbacks: {
+    //         onFollowed: function (method, profileName) {
+    //             alert('method = ' + method + ', profileName = ' + profileName);
+    //         }
+    //     }
+    // });
+</script>
+</body>

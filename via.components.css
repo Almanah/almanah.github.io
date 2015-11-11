@@ -1,0 +1,1391 @@
+/* Styles shared by all VIA components */
+.via_share *,
+.via_follow * {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-text-size-adjust: 100%;
+  /* Prevent font scaling in landscape */
+}
+.via_share,
+.via_follow {
+  font-weight: normal;
+  color: #666666;
+  font: normal 12px Arial, Helvetica, sans-serif;
+}
+/*================================== Icon-font ===============================*/
+@font-face {
+  font-family: 'VIA';
+  src: url(data:application/font-woff;charset=utf-8;base64,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) format('woff');
+}
+[class*=viaIcon]:before,
+[class*=viaIcon]:after {
+  font-family: 'VIA';
+  speak: none;
+  font-size: 14px;
+  font-weight: normal;
+  font-variant: normal;
+  font-style: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  vertical-align: text-top;
+}
+.viaIconFacebook:before {
+  content: "\66";
+  color: #3b5a97;
+}
+.viaIconTwitter:before {
+  content: "\74";
+  color: #00acec;
+}
+.viaIconTumblr:before {
+  content: "\e004";
+}
+.viaIconWhatsApp:before {
+  content: "\e60f";
+  color: #fff;
+}
+.viaIconGooglePlus:before {
+  content: "\e60d";
+}
+.viaIconEnvelope:before {
+  content: "\e008";
+  color: #7e7e7e;
+}
+.viaIconPlus:before {
+  content: "\e026";
+}
+.viaIconClose:before {
+  content: "\e00a";
+}
+.viaIconEmbed:before {
+  content: "\ea7f";
+  color: #0088DC;
+}
+.viaIconInstagram:before {
+  content: '\e601';
+  font-size: 15px;
+  margin: 1px 5px 1px 2px;
+  color: white;
+}
+/*================================== End Icon-font ===============================*/
+
+
+.via_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9001;
+  display: none;
+}
+.via_overlay .via_popupOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+.via_overlay .via_popupWindow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 360px;
+  margin: -180px 0 0 -250px;
+  padding: 30px 10px 10px;
+  box-sizing: border-box;
+  box-shadow: 3px 4px 20px #111;
+  background: #fff;
+}
+.via_overlay .via_popupWindow .viaIconCancel {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.via_overlay .via_popupWindow .viaIconCancel:before {
+  border: none;
+  color: #0088DC;
+  font-size: 20px;
+  content: '\e600';
+}
+.via_overlay button,
+.via_overlay button:active {
+  outline: none;
+}
+@media (max-width: 550px) {
+  .via_overlay .via_popupWindow {
+    left: 0;
+    width: 90%;
+    margin-left: 5%;
+  }
+}
+
+/****************************** Common ******************************/
+.clearFloat {
+  zoom: 1;
+}
+.clearFloat:before,
+.clearFloat:after {
+  content: " ";
+  display: table;
+}
+.clearFloat:after {
+  clear: both;
+}
+.via_follow {
+  /*================================== End of Font icons ===============================*/
+}
+.via_follow div,
+.via_follow span,
+.via_follow a {
+  font-size: 11px;
+}
+.via_follow h2 {
+  font-size: 16px;
+}
+.via_follow ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+.via_follow .successIcon {
+  position: absolute;
+  width: 14px;
+  height: 13px;
+  display: none;
+}
+.via_follow .horizontalView > .followServices > .serviceList > li {
+  padding-bottom: 5px;
+}
+.via_follow .horizontalView .expandableMenu .followServices {
+  display: none;
+  position: static;
+}
+.via_follow .horizontalView .expandableMenu .followServices .serviceList .title {
+  clear: both;
+  font-size: 12px;
+  color: #333;
+  width: 75px;
+  text-transform: capitalize;
+  text-align: right;
+  line-height: 20px;
+  vertical-align: top;
+  font-weight: normal;
+  padding: 0 10px 0 0;
+  display: inline-block;
+}
+.via_follow .horizontalView .expandableMenu .followServices .serviceList > li {
+  clear: both;
+  border-top: 1px solid #dedede;
+  text-align: center;
+  padding: 10px 0;
+}
+.via_follow .horizontalView .expandableMenu .followServices .serviceList .followService {
+  width: 162px;
+  display: inline-block;
+  text-align: left;
+}
+.via_follow .horizontalView .expandableMenu .followServices .serviceList .followService iframe {
+  float: left;
+}
+.via_follow .horizontalView .expandableMenu .followServices .serviceList .followService .fb_iframe_widget {
+  display: block;
+}
+.via_follow .horizontalView .expandableMenu .followedObject {
+  text-align: center;
+  padding: 10px 0;
+  cursor: pointer;
+}
+.via_follow .horizontalView .expandableMenu .followedObject .secondaryHeadline {
+  color: #25A0E7;
+  font-size: small;
+  display: inline-block;
+  margin: 0;
+}
+.via_follow .horizontalView .expandableMenu .followedObject .secondaryHeadline:after {
+  display: inline-block;
+  border: 4px solid transparent;
+  background: transparent;
+  border-top-color: #25A0E7;
+  vertical-align: top;
+  margin: 7px 0 0 4px;
+  content: '';
+}
+.via_follow .horizontalView .expandableMenu.expanded .followedObject .secondaryHeadline:after {
+  border-top-color: transparent;
+  border-bottom-color: #25A0E7;
+  vertical-align: top;
+  margin: 2px 0 0 4px;
+}
+@media (min-width: 980px) {
+  .via_follow .horizontalView .expandableMenu {
+    position: relative;
+    top: 2px;
+  }
+  .via_follow .horizontalView .expandableMenu .followedObject {
+    border: 0;
+    padding: 0;
+  }
+  .via_follow .horizontalView .expandableMenu .followedObject .counter {
+    font-size: small;
+    color: #25a0e7;
+  }
+  .via_follow .horizontalView .expandableMenu .followServices {
+    padding-top: 10px;
+    position: absolute;
+    z-index: 9999;
+    width: 280px;
+    left: 50%;
+    margin: 0 0 0 -140px;
+  }
+  .via_follow .horizontalView .expandableMenu .followServices .serviceList {
+    position: relative;
+    padding: 5px 15px;
+    border: 1px solid #d1d1d1;
+    -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+    background: #fff;
+  }
+  .via_follow .horizontalView .expandableMenu .followServices .serviceList:before,
+  .via_follow .horizontalView .expandableMenu .followServices .serviceList:after {
+    content: '';
+    border: 10px solid transparent;
+    border: 10px solid rgba(238, 238, 238, 0);
+    background: transparent;
+    display: block;
+    position: absolute;
+    border-bottom-color: #fff;
+    top: -20px;
+    left: 50%;
+    margin-left: -10px;
+    visibility: visible;
+  }
+  .via_follow .horizontalView .expandableMenu .followServices .serviceList:before {
+    border-bottom-color: #d1d1d1;
+    margin-top: -1px;
+  }
+  .via_follow .horizontalView .expandableMenu .followServices .serviceList > li:first-child {
+    border: 0;
+  }
+  .via_follow .horizontalView > .followServices > .serviceList > li {
+    padding-right: 8px;
+    padding-bottom: 0;
+    float: left;
+  }
+  .via_follow .horizontalView > .followServices > .serviceList > li + li {
+    padding-left: 8px;
+  }
+  .via_follow .horizontalView > .followServices > .serviceList > li.twitterService > iframe {
+    overflow: hidden;
+  }
+}
+.via_follow .verticalView .sm4IconEnvelope {
+  display: none;
+}
+.via_follow .verticalView > .followServices > .serviceList > li {
+  white-space: nowrap;
+  float: left;
+}
+.via_follow .verticalView > .followServices > .serviceList > .followService {
+  padding: 10px 8px 10px 0;
+}
+@media (max-width: 400px) {
+  .via_follow .verticalView > .followServices > .serviceList > li,
+  .via_follow .verticalView .expandableMenu {
+    width: 100%;
+  }
+}
+.via_follow .verticalView .expandableMenu {
+  width: 320px;
+  padding: 4px 0;
+  border: 0;
+}
+.via_follow .verticalView .expandableMenu > .followServices {
+  /* Should be always displayed to prevent FB button disappearance (look at .fbVisibilityFix) */
+  position: absolute;
+  top: -9999px;
+  clear: both;
+}
+.via_follow .verticalView .expandableMenu > .followServices > .serviceList > li {
+  white-space: nowrap;
+}
+.via_follow .verticalView .expandableMenu > .followServices .serviceList {
+  padding: 15px 20px 0;
+}
+.via_follow .verticalView .expandableMenu > .followServices .serviceList .followService {
+  float: left;
+  width: 49.5%;
+  padding: 0 0 14px;
+  min-height: 24px;
+}
+.via_follow .verticalView .expandableMenu.expanded > .followServices {
+  position: static;
+  display: none;
+}
+@media (min-width: 1px) and (max-width: 9999px) {
+  .via_follow .verticalView .expandableMenu .followedObject > .secondaryHeadline {
+    max-width: 100%;
+    /* This is to change value for all browsers except IE8 and below */
+  }
+}
+.via_follow .verticalView .expandableMenu .followedObject {
+  margin: 0;
+  padding: 0 15px;
+  height: 34px;
+  line-height: 34px;
+  background-color: #ffffff;
+  border: 1px solid #d2d0d0;
+  background: #ffffff;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #dadada 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #dadada));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #ffffff 0%, #dadada 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #ffffff 0%, #dadada 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #ffffff 0%, #dadada 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #ffffff 0%, #dadada 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff, endColorstr=#dadada, GradientType=0);
+  /* IE6-9 */
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  text-align: center;
+  cursor: pointer;
+}
+.via_follow .verticalView .expandableMenu .followedObject > .secondaryHeadline {
+  display: inline-block;
+  padding-right: 15px;
+  position: relative;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: medium;
+  vertical-align: top;
+  /* To prevent change height of parent block */
+  color: #25A0E7;
+  display: inline;
+}
+.via_follow .verticalView .expandableMenu .followedObject > .secondaryHeadline:after {
+  border: 5px solid transparent;
+  border-top-color: #25A0E7;
+  position: absolute;
+  right: 0;
+  top: 45%;
+  content: '';
+}
+.via_follow .verticalView .expandableMenu .followedObject:hover {
+  background: #dadada;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #dadada 0%, #ffffff 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dadada), color-stop(100%, #ffffff));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #dadada 0%, #ffffff 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #dadada 0%, #ffffff 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #dadada 0%, #ffffff 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #dadada 0%, #ffffff 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#dadada, endColorstr=#ffffff, GradientType=0);
+  /* IE6-9 */
+}
+.via_follow .verticalView .expandableMenu.expanded {
+  border: 1px solid #d1d1d1;
+  padding: 5px 0 15px;
+}
+.via_follow .verticalView .expandableMenu.expanded .followedObject {
+  margin: 0 15px;
+  border: 0;
+  border-bottom: 1px solid #d8d8d8;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  background: none;
+  filter: none;
+}
+.via_follow .verticalView .expandableMenu.expanded .followedObject .secondaryHeadline:after {
+  border-top-color: transparent;
+  border-bottom-color: #25A0E7;
+  top: 0;
+  bottom: 45%;
+}
+@media (min-width: 480px) {
+  .via_follow .verticalView {
+    border: 1px solid #d1d1d1;
+    padding: 0 15px 15px;
+    min-height: 120px;
+  }
+  .via_follow .verticalView > .followServices .serviceList .followService,
+  .via_follow .verticalView .expandableMenu > .followServices .serviceList .followService {
+    padding: 0 0 15px 0;
+    display: block;
+    text-align: left;
+    float: none;
+    width: auto;
+  }
+  .via_follow .verticalView .expandableMenu {
+    border: 0 !important;
+    padding: 0 !important;
+  }
+  .via_follow .verticalView .expandableMenu.expanded .followedObject {
+    margin: 0;
+  }
+  .via_follow .verticalView .expandableMenu .followServices {
+    position: static;
+    display: block;
+    clear: both;
+  }
+  .via_follow .verticalView .expandableMenu > .followServices .serviceList {
+    padding: 0;
+    overflow: visible;
+  }
+  .via_follow .verticalView .expandableMenu .followedObject {
+    border: 0;
+    padding: 10px 0 !important;
+    border-bottom: 1px solid #d8d8d8;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    filter: none !important;
+    background: none;
+    text-align: left;
+    height: auto;
+    line-height: inherit;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    cursor: default;
+  }
+  .via_follow .verticalView .expandableMenu .followedObject .secondaryHeadline {
+    color: #333;
+    max-width: 100%;
+  }
+  .via_follow .verticalView .expandableMenu .followedObject .secondaryHeadline:after {
+    display: none;
+  }
+  .via_follow .verticalView .expandableMenu .followedObject i {
+    display: none;
+  }
+  .via_follow .verticalView .expandableMenu .followedObject:hover {
+    background: none;
+  }
+  .via_follow .verticalView .expandableMenu .followedObject .counter {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    z-index: 1;
+    padding: 0 0 0 4px;
+  }
+  .via_follow .verticalView > .followServices {
+    position: relative;
+    padding-top: 55px;
+  }
+  .via_follow .verticalView > .followServices > .serviceList > li {
+    float: none;
+  }
+  .via_follow .verticalView > .followServices > .serviceList > .fluxService .help {
+    display: inline-block;
+  }
+}
+.via_follow .expandableMenu .followedObject .counter {
+  display: none;
+}
+.via_follow .expandableMenu .followedObject i {
+  margin-right: 4px;
+  vertical-align: baseline;
+  font-style: normal;
+}
+.via_follow .via_tumblrContainer {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.via_follow .e-via_tumblrOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+.via_follow .via_instagramFollow {
+  display: inline-block;
+  padding-right: 5px;
+  border-radius: 3px;
+  border-top: 1px solid #7FA4BF;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  background: #5080a5;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #5080a5 0%, #2f5283 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5080a5), color-stop(100%, #2f5283));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #5080a5 0%, #2f5283 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #5080a5 0%, #2f5283 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #5080a5 0%, #2f5283 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #5080a5 0%, #2f5283 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#5080a5, endColorstr=#2f5283, GradientType=0);
+  /* IE6-9 */
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.via_follow .via_instagramFollow:hover {
+  background: #2f5283;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #2f5283 0%, #5080a5 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2f5283), color-stop(100%, #5080a5));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #2f5283 0%, #5080a5 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #2f5283 0%, #5080a5 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #2f5283 0%, #5080a5 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #2f5283 0%, #5080a5 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#2f5283, endColorstr=#5080a5, GradientType=0);
+  /* IE6-9 */
+}
+.via_follow .via_instagramFollow .e-via_instagramButtonText {
+  display: inline-block;
+  height: 19px;
+  line-height: 19px;
+}
+
+/************* Change main share widget's styles for responsive design *************/
+.via_share {
+  border: 0 !important;
+  display: block !important;
+  padding: 0 !important;
+  position: absolute;
+  /************* Buttons, icons and counters *************/
+  /************* PINNED BAR (MOBILE ONLY)*************/
+}
+.via_share ul.shareActions {
+  width: 24px;
+  margin-left: -80px;
+  /* should not be on the element with position:fixed */
+  list-style: none outside none;
+  padding: 0;
+}
+.via_share ul.shareActions:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.via_share ul.shareActions > li {
+  float: left;
+  margin: 0 0 4px;
+  position: relative;
+}
+.via_share .actionItem {
+  width: 22px;
+  padding: 8px 6px 6px;
+  position: relative;
+  font-size: 12px;
+  border: 1px solid #d2d0d0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background: #ffffff;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #dadada 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #dadada));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #ffffff 0%, #dadada 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #ffffff 0%, #dadada 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #ffffff 0%, #dadada 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #ffffff 0%, #dadada 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff, endColorstr=#dadada, GradientType=0);
+  /* IE6-9 */
+  cursor: pointer;
+  /************* Default flyout styles *************/
+  /************* Icons and counters *************/
+}
+.via_share .actionItem:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.via_share .actionItem.toggle {
+  display: none;
+}
+.via_share .actionItem.facebook,
+.via_share .actionItem.twitter,
+.via_share .actionItem.google,
+.via_share .actionItem.whatsapp,
+.via_share .actionItem.tumblr {
+  border: none;
+  padding: 9px 7px 10px 7px;
+}
+.via_share .actionItem .viaIconGooglePlus:before {
+  font-size: 21px;
+}
+.via_share .actionItem .viaIconTwitter {
+  left: 1px;
+}
+.via_share .actionItem.facebook .viaIconFacebook:before,
+.via_share .actionItem.facebook .actionCount,
+.via_share .actionItem.twitter .viaIconTwitter:before,
+.via_share .actionItem.twitter .actionCount,
+.via_share .actionItem.google .viaIconGooglePlus:before,
+.via_share .actionItem.tumblr .actionCount,
+.via_share .actionItem.tumblr .viaIconTumblr:before {
+  color: #fff;
+}
+.via_share .actionItem.facebook {
+  background: #557ccb;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #557ccb 0%, #1d4491 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #557ccb), color-stop(100%, #1d4491));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #557ccb 0%, #1d4491 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #557ccb 0%, #1d4491 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #557ccb 0%, #1d4491 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #557ccb 0%, #1d4491 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#557ccb, endColorstr=#1d4491, GradientType=0);
+  /* IE6-9 */
+}
+.via_share .actionItem.whatsapp {
+  background: #52ea6e;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #52ea6e 0%, #08b825 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #52ea6e), color-stop(100%, #08b825));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #52ea6e 0%, #08b825 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #52ea6e 0%, #08b825 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #52ea6e 0%, #08b825 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #52ea6e 0%, #08b825 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#52ea6e, endColorstr=#08b825, GradientType=0);
+  /* IE6-9 */
+}
+.via_share .actionItem.whatsapp .actionIcon:before {
+  font-size: 20px;
+}
+.via_share .actionItem.twitter {
+  background: #4ac9fe;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #4ac9fe 0%, #299dce 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4ac9fe), color-stop(100%, #299dce));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #4ac9fe 0%, #299dce 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #4ac9fe 0%, #299dce 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #4ac9fe 0%, #299dce 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #4ac9fe 0%, #299dce 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4ac9fe, endColorstr=#299dce, GradientType=0);
+  /* IE6-9 */
+}
+.via_share .actionItem.google {
+  background: #ff6f58;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #ff6f58 0%, #dd4b39 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff6f58), color-stop(100%, #dd4b39));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #ff6f58 0%, #dd4b39 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #ff6f58 0%, #dd4b39 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #ff6f58 0%, #dd4b39 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #ff6f58 0%, #dd4b39 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff6f58, endColorstr=#dd4b39, GradientType=0);
+  /* IE6-9 */
+}
+.via_share .actionItem.tumblr {
+  background: #476589;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #476589 0%, #344760 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #476589), color-stop(100%, #344760));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #476589 0%, #344760 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #476589 0%, #344760 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #476589 0%, #344760 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #476589 0%, #344760 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#476589, endColorstr=#344760, GradientType=0);
+  /* IE6-9 */
+}
+.via_share .actionItem .actionFlyout {
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 100%;
+  margin: -23px 0 0 7px;
+  line-height: 44px;
+  z-index: 1;
+  text-align: center;
+  color: #777;
+  font-size: 12px;
+  font-weight: normal;
+  white-space: nowrap;
+  padding: 0 15px;
+  border: 1px solid #d2d0d0;
+  background: #fff;
+  -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+  cursor: default;
+  /************* Flyout arrow to the left *************/
+}
+.via_share .actionItem .actionFlyout:before,
+.via_share .actionItem .actionFlyout:after {
+  content: '';
+  border: 5px solid transparent;
+  border: 5px solid rgba(238, 238, 238, 0);
+  background: transparent;
+  display: block;
+  position: absolute;
+  border-right-color: #fff;
+  left: -10px;
+  top: 18px;
+}
+.via_share .actionItem .actionFlyout:before {
+  border-right-color: #d2d2d2;
+  margin: 0 0 0 -1px;
+}
+.via_share .actionItem .actionIcon {
+  height: 22px;
+  width: 22px;
+  position: relative;
+  top: 1px;
+  background: none;
+  text-align: center;
+}
+.via_share .actionItem .actionIcon:before {
+  font-size: 19px;
+  vertical-align: top;
+}
+.via_share .actionItem .actionIcon.viaIconEnvelope:before {
+  color: #0088DC;
+  padding-left: 1px;
+}
+.via_share .actionItem .actionCount {
+  height: 11px;
+  line-height: 12px;
+  width: 22px;
+  text-align: center;
+  color: #777;
+  font-size: 10px;
+  font-weight: normal;
+  padding: 1px 0 0 0;
+  visibility: hidden;
+}
+.via_share .actionItem .actionCount.loaded {
+  visibility: visible;
+}
+.via_share .actionItem .actionCount:before {
+  content: '(';
+}
+.via_share .actionItem .actionCount:after {
+  content: ')';
+}
+.via_share li.hoverItem .actionItem {
+  background: #dadada;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #dadada 0%, #ffffff 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dadada), color-stop(100%, #ffffff));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #dadada 0%, #ffffff 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #dadada 0%, #ffffff 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #dadada 0%, #ffffff 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #dadada 0%, #ffffff 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#dadada, endColorstr=#ffffff, GradientType=0);
+  /* IE6-9 */
+}
+.via_share li.hoverItem .actionItem.facebook {
+  background: #1d4491;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #1d4491 0%, #557ccb 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1d4491), color-stop(100%, #557ccb));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #1d4491 0%, #557ccb 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #1d4491 0%, #557ccb 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #1d4491 0%, #557ccb 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #1d4491 0%, #557ccb 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#1d4491, endColorstr=#557ccb, GradientType=0);
+  /* IE6-9 */
+}
+.via_share li.hoverItem .actionItem.whatsapp {
+  background: #08b825;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #08b825 0%, #52ea6e 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #08b825), color-stop(100%, #52ea6e));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #08b825 0%, #52ea6e 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #08b825 0%, #52ea6e 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #08b825 0%, #52ea6e 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #08b825 0%, #52ea6e 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#08b825, endColorstr=#52ea6e, GradientType=0);
+  /* IE6-9 */
+}
+.via_share li.hoverItem .actionItem.twitter {
+  background: #299dce;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #299dce 0%, #4ac9fe 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #299dce), color-stop(100%, #4ac9fe));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #299dce 0%, #4ac9fe 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #299dce 0%, #4ac9fe 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #299dce 0%, #4ac9fe 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #299dce 0%, #4ac9fe 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#299dce, endColorstr=#4ac9fe, GradientType=0);
+  /* IE6-9 */
+}
+.via_share li.hoverItem .actionItem.google {
+  background: #dd4b39;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #dd4b39 0%, #ff6f58 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dd4b39), color-stop(100%, #ff6f58));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #dd4b39 0%, #ff6f58 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #dd4b39 0%, #ff6f58 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #dd4b39 0%, #ff6f58 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #dd4b39 0%, #ff6f58 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#dd4b39, endColorstr=#ff6f58, GradientType=0);
+  /* IE6-9 */
+}
+.via_share li.hoverItem .actionItem.tumblr {
+  background: #344760;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #344760 0%, #476589 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #344760), color-stop(100%, #476589));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #344760 0%, #476589 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #344760 0%, #476589 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #344760 0%, #476589 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #344760 0%, #476589 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#344760, endColorstr=#476589, GradientType=0);
+  /* IE6-9 */
+}
+.via_share li.hoverItem .actionHover {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 7px 0 0 7px;
+}
+.via_share.pinned {
+  position: fixed;
+  z-index: 9000;
+  -webkit-backface-visibility: hidden;
+}
+.via_share.fixed {
+  position: static;
+}
+.via_share.fixed ul.shareActions {
+  width: auto;
+  margin: 0;
+}
+.via_share.fixed ul.shareActions > li {
+  margin: 0 5px 0 0;
+}
+.via_share.fixed .actionItem {
+  width: auto;
+  padding: 6px;
+}
+.via_share.fixed .actionItem .actionIcon,
+.via_share.fixed .actionItem .actionCount {
+  float: left;
+}
+.via_share.fixed .actionItem .actionIcon + .actionCount {
+  margin-left: 3px;
+}
+.via_share.fixed .actionItem .actionCount {
+  line-height: 22px;
+}
+.via_share.fixed .actionItem.facebook,
+.via_share.fixed .actionItem.twitter,
+.via_share.fixed .actionItem.google,
+.via_share.fixed .actionItem.tumblr {
+  padding: 7px;
+}
+.via_share.fixed .actionItem .actionFlyout {
+  left: 0;
+  top: 100%;
+  margin: 7px 0 0 0;
+  /************* Flyout arrow to the top *************/
+}
+.via_share.fixed .actionItem .actionFlyout:before,
+.via_share.fixed .actionItem .actionFlyout:after {
+  border: 5px solid transparent;
+  border: 5px solid rgba(238, 238, 238, 0);
+  border-bottom-color: #fff;
+  top: -10px;
+  left: 18px;
+}
+.via_share.fixed .actionItem .actionFlyout:before {
+  border-bottom-color: #d2d2d2;
+  margin: -1px 0 0 0;
+}
+.via_share.pinned.top,
+.via_share.pinned.right,
+.via_share.pinned.bottom,
+.via_share.pinned.left {
+  position: fixed;
+  z-index: 9000;
+  -webkit-backface-visibility: hidden;
+}
+.via_share.pinned.top .actionItem:hover,
+.via_share.pinned.right .actionItem:hover,
+.via_share.pinned.bottom .actionItem:hover,
+.via_share.pinned.left .actionItem:hover,
+.via_share.pinned.top .actionItem,
+.via_share.pinned.right .actionItem,
+.via_share.pinned.bottom .actionItem,
+.via_share.pinned.left .actionItem {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  background: #7a7a7a;
+  width: auto;
+}
+.via_share.pinned.top .actionItem:hover .actionCount,
+.via_share.pinned.right .actionItem:hover .actionCount,
+.via_share.pinned.bottom .actionItem:hover .actionCount,
+.via_share.pinned.left .actionItem:hover .actionCount,
+.via_share.pinned.top .actionItem .actionCount,
+.via_share.pinned.right .actionItem .actionCount,
+.via_share.pinned.bottom .actionItem .actionCount,
+.via_share.pinned.left .actionItem .actionCount,
+.via_share.pinned.top .actionItem:hover .actionIcon:before,
+.via_share.pinned.right .actionItem:hover .actionIcon:before,
+.via_share.pinned.bottom .actionItem:hover .actionIcon:before,
+.via_share.pinned.left .actionItem:hover .actionIcon:before,
+.via_share.pinned.top .actionItem .actionIcon:before,
+.via_share.pinned.right .actionItem .actionIcon:before,
+.via_share.pinned.bottom .actionItem .actionIcon:before,
+.via_share.pinned.left .actionItem .actionIcon:before {
+  color: #fff;
+}
+.via_share.pinned.top .actionItem:hover .actionIcon:before,
+.via_share.pinned.right .actionItem:hover .actionIcon:before,
+.via_share.pinned.bottom .actionItem:hover .actionIcon:before,
+.via_share.pinned.left .actionItem:hover .actionIcon:before,
+.via_share.pinned.top .actionItem .actionIcon:before,
+.via_share.pinned.right .actionItem .actionIcon:before,
+.via_share.pinned.bottom .actionItem .actionIcon:before,
+.via_share.pinned.left .actionItem .actionIcon:before {
+  font-size: 22px;
+}
+.via_share.pinned.top .actionItem:hover .actionCount,
+.via_share.pinned.right .actionItem:hover .actionCount,
+.via_share.pinned.bottom .actionItem:hover .actionCount,
+.via_share.pinned.left .actionItem:hover .actionCount,
+.via_share.pinned.top .actionItem .actionCount,
+.via_share.pinned.right .actionItem .actionCount,
+.via_share.pinned.bottom .actionItem .actionCount,
+.via_share.pinned.left .actionItem .actionCount {
+  font-size: 11px;
+}
+.via_share.pinned.top .actionItem:hover .actionCount:before,
+.via_share.pinned.right .actionItem:hover .actionCount:before,
+.via_share.pinned.bottom .actionItem:hover .actionCount:before,
+.via_share.pinned.left .actionItem:hover .actionCount:before,
+.via_share.pinned.top .actionItem .actionCount:before,
+.via_share.pinned.right .actionItem .actionCount:before,
+.via_share.pinned.bottom .actionItem .actionCount:before,
+.via_share.pinned.left .actionItem .actionCount:before,
+.via_share.pinned.top .actionItem:hover .actionCount:after,
+.via_share.pinned.right .actionItem:hover .actionCount:after,
+.via_share.pinned.bottom .actionItem:hover .actionCount:after,
+.via_share.pinned.left .actionItem:hover .actionCount:after,
+.via_share.pinned.top .actionItem .actionCount:after,
+.via_share.pinned.right .actionItem .actionCount:after,
+.via_share.pinned.bottom .actionItem .actionCount:after,
+.via_share.pinned.left .actionItem .actionCount:after {
+  content: none;
+}
+.via_share.pinned.top .actionItem.whatsapp,
+.via_share.pinned.right .actionItem.whatsapp,
+.via_share.pinned.bottom .actionItem.whatsapp,
+.via_share.pinned.left .actionItem.whatsapp {
+  background: #32d04c;
+}
+.via_share.pinned.top .actionItem.whatsapp .actionIcon:before,
+.via_share.pinned.right .actionItem.whatsapp .actionIcon:before,
+.via_share.pinned.bottom .actionItem.whatsapp .actionIcon:before,
+.via_share.pinned.left .actionItem.whatsapp .actionIcon:before {
+  content: "\e60e";
+}
+.via_share.pinned.top .viaIconClose:before,
+.via_share.pinned.right .viaIconClose:before,
+.via_share.pinned.bottom .viaIconClose:before,
+.via_share.pinned.left .viaIconClose:before {
+  color: #7E7E7E;
+}
+.via_share.pinned.top .actionItem.facebook,
+.via_share.pinned.right .actionItem.facebook,
+.via_share.pinned.bottom .actionItem.facebook,
+.via_share.pinned.left .actionItem.facebook {
+  background: #3d5c93;
+}
+.via_share.pinned.top .actionItem.twitter,
+.via_share.pinned.right .actionItem.twitter,
+.via_share.pinned.bottom .actionItem.twitter,
+.via_share.pinned.left .actionItem.twitter {
+  background: #27abdc;
+}
+.via_share.pinned.top .actionItem.google,
+.via_share.pinned.right .actionItem.google,
+.via_share.pinned.bottom .actionItem.google,
+.via_share.pinned.left .actionItem.google {
+  background: #e1493a;
+}
+.via_share.pinned.top .actionItem.tumblr,
+.via_share.pinned.right .actionItem.tumblr,
+.via_share.pinned.bottom .actionItem.tumblr,
+.via_share.pinned.left .actionItem.tumblr {
+  background: #35465d;
+}
+.via_share.pinned.top,
+.via_share.pinned.bottom {
+  left: 0;
+  right: 0;
+  /* center all inline content */
+  text-align: center;
+}
+.via_share.pinned.top ul.shareActions,
+.via_share.pinned.bottom ul.shareActions {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.via_share.pinned.top ul.shareActions > li,
+.via_share.pinned.bottom ul.shareActions > li {
+  margin: 0;
+}
+.via_share.pinned.top .actionItem,
+.via_share.pinned.bottom .actionItem {
+  min-width: 45px;
+  padding: 9px 3px 8px 3px;
+  border: none;
+  text-align: center;
+}
+.via_share.pinned.top .actionItem .actionInner,
+.via_share.pinned.bottom .actionItem .actionInner {
+  display: inline-block;
+  text-align: center;
+}
+.via_share.pinned.top .actionItem .actionInner .actionCount,
+.via_share.pinned.bottom .actionItem .actionInner .actionCount,
+.via_share.pinned.top .actionItem .actionInner .actionIcon,
+.via_share.pinned.bottom .actionItem .actionInner .actionIcon {
+  display: inline-block;
+}
+.via_share.pinned.top .actionItem .actionInner .actionCount,
+.via_share.pinned.bottom .actionItem .actionInner .actionCount {
+  margin-left: 7px;
+  line-height: 26px;
+}
+.via_share.pinned.left {
+  left: 0px;
+}
+.via_share.pinned.right {
+  right: 0px;
+}
+.via_share.pinned.top {
+  top: 0px;
+}
+.via_share.pinned.bottom {
+  bottom: 0px;
+}
+.via_share.pinned.top ul.shareActions,
+.via_share.pinned.bottom ul.shareActions {
+  /* make the block inline */
+  display: inline-block;
+  /* reset container's center alignment */
+  text-align: left;
+}
+.via_share.pinned.bottom ul.shareActions {
+  /* solve the space problem of inline-block elements */
+  margin-bottom: -4px;
+}
+.via_share.pinned.bottom.hidden {
+  visibility: hidden;
+}
+.via_share.pinned.bottom.hidden .actionCount.loaded {
+  visibility: hidden;
+}
+.via_share.pinned.right,
+.via_share.pinned.left {
+  /* position share div vertically BEGIN */
+  display: table;
+  vertical-align: middle;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  /* position share div vertically END */
+  /************* Buttons, icons and counters *************/
+}
+.via_share.pinned.right ul.shareActions,
+.via_share.pinned.left ul.shareActions {
+  display: table-cell;
+  vertical-align: middle;
+}
+.via_share.pinned.right ul.shareActions > li,
+.via_share.pinned.left ul.shareActions > li {
+  margin: 0;
+  float: none;
+  border: none;
+}
+.via_share.pinned.right .hidden,
+.via_share.pinned.left .hidden {
+  visibility: hidden;
+}
+.via_share.pinned.right .hidden .actionCount.loaded,
+.via_share.pinned.left .hidden .actionCount.loaded {
+  visibility: hidden;
+}
+.via_share.pinned.right .hoverItem .actionItem .actionFlyout,
+.via_share.pinned.left .hoverItem .actionItem .actionFlyout {
+  left: 100%;
+}
+.via_share.pinned.right .actionItem,
+.via_share.pinned.left .actionItem {
+  width: 22px;
+  padding: 9px 11px 10px 11px;
+  border: none;
+}
+.via_share.pinned.right .actionItem.toggle,
+.via_share.pinned.left .actionItem.toggle {
+  display: block;
+  text-align: center;
+  webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+.via_share.pinned.right .actionItem .actionIcon,
+.via_share.pinned.left .actionItem .actionIcon {
+  float: none;
+}
+.via_share.pinned.right .actionItem .actionIcon,
+.via_share.pinned.left .actionItem .actionIcon,
+.via_share.pinned.right .actionItem .actionCount,
+.via_share.pinned.left .actionItem .actionCount {
+  margin-left: 0;
+}
+.via_share.pinned.right .actionItem .actionCount,
+.via_share.pinned.left .actionItem .actionCount {
+  height: 11px;
+  line-height: 12px;
+  width: 22px;
+  position: relative;
+  top: 4px;
+}
+.via_share.pinned.right .actionItem .actionFlyout,
+.via_share.pinned.left .actionItem .actionFlyout {
+  top: 50%;
+  margin: -23px 0 0 7px;
+  /************* Flyout arrow to the left *************/
+}
+.via_share.pinned.right .actionItem .actionFlyout:before,
+.via_share.pinned.left .actionItem .actionFlyout:before,
+.via_share.pinned.right .actionItem .actionFlyout:after,
+.via_share.pinned.left .actionItem .actionFlyout:after {
+  border: 5px solid transparent;
+  border: 5px solid rgba(238, 238, 238, 0);
+  border-right-color: #fff;
+  left: -10px;
+  top: 18px;
+}
+.via_share.pinned.right .actionItem .actionFlyout:before,
+.via_share.pinned.left .actionItem .actionFlyout:before {
+  border-right-color: #d2d2d2;
+  margin: 0 0 0 -1px;
+}
+.via_share.pinned.bottom {
+  /************* Flyout arrow to the bottom *************/
+}
+.via_share.pinned.bottom .hoverItem .actionItem .actionFlyout {
+  top: -52px;
+  margin-top: 0;
+}
+.via_share.pinned.bottom .actionItem .actionFlyout:before,
+.via_share.pinned.bottom .actionItem .actionFlyout:after {
+  content: '';
+  border: 5px solid transparent;
+  border: 5px solid rgba(238, 238, 238, 0);
+  background: transparent;
+  display: block;
+  position: absolute;
+  border-top-color: #fff;
+  border-bottom-color: transparent;
+  top: 44px;
+  left: 18px;
+}
+.via_share.pinned.bottom .actionItem .actionFlyout:before {
+  border-bottom-color: transparent;
+  border-top-color: #d2d2d2;
+  margin: 1px 0 0 0;
+}
+.via_share.pinned.right {
+  /************* Flyout arrow to the right *************/
+}
+.via_share.pinned.right .hoverItem .actionItem .actionFlyout {
+  left: -195px;
+  width: 150px;
+}
+.via_share.pinned.right .actionItem .actionFlyout:before,
+.via_share.pinned.right .actionItem .actionFlyout:after {
+  border: 5px solid transparent;
+  border: 5px solid rgba(238, 238, 238, 0);
+  border-left-color: white;
+  margin: 0 0 0 -1px;
+  left: 180px;
+  top: 18px;
+}
+.via_share.pinned.right .actionItem .actionFlyout:before {
+  border-left-color: #d2d2d2;
+  margin: 0 1px 0 0;
+}
+
+.e-via_embedPopup .e-via_embedCode {
+  overflow: auto;
+  width: 100%;
+  height: 250px;
+  margin: 0;
+  padding: 5px;
+  border: 2px solid #eee;
+  box-sizing: border-box;
+  color: #000;
+  background: white;
+  resize: none;
+}
+.e-via_embedPopup .e-via_copyEmbedButton {
+  float: right;
+  width: 136px;
+  height: 26px;
+  margin-top: 17px;
+  border: 1px solid #0075C3;
+  color: white;
+  background: #009ffa;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #009ffa 0%, #0075c3 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #009ffa), color-stop(100%, #0075c3));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #009ffa 0%, #0075c3 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #009ffa 0%, #0075c3 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #009ffa 0%, #0075c3 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #009ffa 0%, #0075c3 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#009ffa, endColorstr=#0075c3, GradientType=0);
+  /* IE6-9 */
+  cursor: pointer;
+}
+.e-via_embedPopup .e-via_copyEmbedButton:hover {
+  background: #0075c3;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #0075c3 0%, #009ffa 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #0075c3), color-stop(100%, #009ffa));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #0075c3 0%, #009ffa 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #0075c3 0%, #009ffa 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #0075c3 0%, #009ffa 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #0075c3 0%, #009ffa 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#0075c3, endColorstr=#009ffa, GradientType=0);
+  /* IE6-9 */
+}
+.e-via_embedPopup .e-via_hint {
+  position: absolute;
+  left: 30px;
+  bottom: 40px;
+  display: none;
+  color: #0075C3;
+  font: bold 12px Arial, Helvetica, sans-serif;
+}
+.e-via_embedPopup button,
+.e-via_embedPopup button:active,
+.e-via_embedPopup textarea:focus {
+  outline: none;
+}
